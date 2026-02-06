@@ -6,7 +6,9 @@
     "rootDir": "src",
     "lib": ["ESNext"],
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "declaration": true,
+    "declarationDir": "dist"
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"],
