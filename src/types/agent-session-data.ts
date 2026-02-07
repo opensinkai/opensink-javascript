@@ -17,3 +17,5 @@ export default interface AgentSession {
   created_at: string;
   updated_at: string;
 }
+
+export type AgentSessionData = Omit<AgentSession, 'id' | 'created_at' | 'updated_at' | 'agent_id' | 'workspace_id'>;

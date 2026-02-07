@@ -1,6 +1,6 @@
 {
   "name": "opensink",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Official JavaScript/TypeScript client for the OpenSink API",
   "private": false,
   "type": "module",
@@ -36,7 +36,6 @@
     "lint:fix": "yarn lint --fix",
     "lint": "eslint ./src --ext .ts",
     "build": "tsc && tsc-alias",
-    "build:packages": "yarn build",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
