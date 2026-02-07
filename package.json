@@ -1,6 +1,6 @@
 {
   "name": "opensink",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Official JavaScript/TypeScript client for the OpenSink API",
   "private": false,
   "type": "module",

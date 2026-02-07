@@ -24,4 +24,4 @@ export type CreateAgentSessionData = Omit<
   >
   & Partial<Pick<AgentSessionData, 'state' | 'metadata'>>;
 
-export type UpdateAgentSessionData = Omit<CreateAgentSessionData, 'agent_id'>;
+export type UpdateAgentSessionData = Partial<Omit<CreateAgentSessionData, 'agent_id'>>;
