@@ -5,7 +5,7 @@ export interface PaginatedResponse<T> {
   trail: string | null;
 }
 
-export default class APIResource<T, D = T> {
+export default class APIResource<T, D = T, U = Partial<D>> {
   constructor(readonly axios: AxiosInstance, readonly path: string) {}
 
   async create(data: D): Promise<AxiosResponse<T>> {
@@ -20,8 +20,8 @@ export default class APIResource<T, D = T> {
     return this.axios.get<T>(`${this.path}/${id}`);
   }
 
-  async update(id: string, data: Partial<D>): Promise<AxiosResponse<T>> {
-    return this.axios.patch<T, AxiosResponse<T>, Partial<D>>(`${this.path}/${id}`, data);
+  async update(id: string, data: U): Promise<AxiosResponse<T>> {
+    return this.axios.patch<T, AxiosResponse<T>, U>(`${this.path}/${id}`, data);
   }
 
   async delete(id: string): Promise<AxiosResponse<void>> {

@@ -6,7 +6,7 @@ export enum AgentSessionStatus {
   FAILED = 'failed',
 }
 
-export default interface AgentSession {
+export default interface AgentSessionData {
   id: string;
   agent_id: string;
   workspace_id: string;
@@ -18,4 +18,5 @@ export default interface AgentSession {
   updated_at: string;
 }
 
-export type AgentSessionData = Omit<AgentSession, 'id' | 'created_at' | 'updated_at' | 'agent_id' | 'workspace_id'>;
+export type CreateAgentSessionData = Omit<AgentSessionData, 'id' | 'created_at' | 'updated_at' | 'workspace_id'>;
+export type UpdateAgentSessionData = Omit<CreateAgentSessionData, 'agent_id'>;
