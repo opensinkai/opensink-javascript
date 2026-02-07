@@ -18,5 +18,10 @@ export default interface AgentSessionData {
   updated_at: string;
 }
 
-export type CreateAgentSessionData = Omit<AgentSessionData, 'id' | 'created_at' | 'updated_at' | 'workspace_id'>;
+export type CreateAgentSessionData = Omit<
+    AgentSessionData,
+    'id' | 'created_at' | 'updated_at' | 'workspace_id' | 'state' | 'metadata'
+  >
+  & Partial<Pick<AgentSessionData, 'state' | 'metadata'>>;
+
 export type UpdateAgentSessionData = Omit<CreateAgentSessionData, 'agent_id'>;
